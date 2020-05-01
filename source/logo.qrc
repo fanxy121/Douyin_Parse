@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="head">
+    <file>logo.png</file>
+  </qresource>
+  <qresource prefix="parse">
+    <file>parse.ico</file>
+  </qresource>
+  <qresource prefix="douyin">
+    <file>douyin.png</file>
+  </qresource>
+  <qresource prefix="window">
+    <file>logo1.png</file>
+  </qresource>
+</RCC>
