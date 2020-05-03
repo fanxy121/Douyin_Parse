@@ -34,17 +34,17 @@ class MainLogic(QWidget,Ui_Form,ParseData):
         self.player.pause()
 
     def parse_video(self):
-        # try:
-        self.parse_url(self.parse_le.text())
-        self.get_data()
-        self.setVideo(self.play_addr)
-        self.insertData()
-        self.clear_btn.setEnabled(True)
-        self.play_btn.setEnabled(True)
-        self.download_btn.setEnabled(True)
-        self.parse_btn.setEnabled(False)
-        # except:
-        #     QMessageBox.critical(self, "解析失败", "请检查当前网络链接\n或者检查分享链接是否输入正确")
+        try:
+            self.parse_url(self.parse_le.text())
+            self.get_data()
+            self.setVideo(self.play_addr)
+            self.insertData()
+            self.clear_btn.setEnabled(True)
+            self.play_btn.setEnabled(True)
+            self.download_btn.setEnabled(True)
+            self.parse_btn.setEnabled(False)
+        except:
+            QMessageBox.critical(self, "解析失败", "请检查当前网络链接\n或者检查分享链接是否输入正确")
 
     def widget_style(self):
         self.min_btn = QPushButton(qtawesome.icon('fa.window-minimize', color='#ddd'), "",self.widget_3)
@@ -138,7 +138,6 @@ class MainLogic(QWidget,Ui_Form,ParseData):
                 t2 = time.time()
                 t = t2 - t1
                 speed = dl / 1024 / 1024 / t
-                print(speed)
                 self.progressBar.setValue(show * 100)
                 self.download_speed_label.setText(f'{str(speed)[0:4]}M/s')
 
